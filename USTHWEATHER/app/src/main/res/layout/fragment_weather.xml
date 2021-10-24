@@ -4,14 +4,15 @@
     android:id="@+id/fragment_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AAFFAA"
+    android:background="@drawable/frame"
     tools:context=".WeatherFragment">
 
     <TextView
         android:layout_width="0px"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="12°C\nCloudy"/>
+        android:id="@+id/fragment_weather_weathertext"
+        android:text="@string/cloud"/>
 
     <ImageView
         android:layout_width="0px"
@@ -20,6 +21,7 @@
         android:src="@drawable/cloud_1"/>
 
     <TextView
+        android:id="@+id/fragment_weather_city"
         android:layout_width="0px"
         android:layout_height="wrap_content"
         android:layout_weight="1"

@@ -7,11 +7,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import org.w3c.dom.Text;
+import java.util.Objects;
 
 public class WeatherFragment extends Fragment {
+    private static final String ARG_PARAM1 = "city";
+    private String mCity;
 
     public WeatherFragment() {
-        // Required empty public constructor
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            if (getArguments() != null) {
+                mCity = getArguments().getString(ARG_PARAM1);
+            }
     }
 
     /**
@@ -37,5 +47,12 @@ public class WeatherFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_weather, container, false);
+            View view = inflater.inflate(R.layout.fragment_weather, container, false);
+            TextView weather = view.findViewById(R.id.fragment_weather_weathertext);
+            TextView cityName = view.findViewById(R.id.fragment_weather_city);
+            weather.setText(String.format("12°C\n%s", this.requireContext().getString(R.string.cloud)));
+            cityName.setText(mCity);
+
+            return view;
     }
 }
