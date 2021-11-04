@@ -39,8 +39,7 @@ public class ForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_forecast, container, false);
-        int color = 0x90ADD8E6;
-        view.setBackgroundColor(color);
+
 
         LinearLayout mainLayout = view.findViewById(R.id.fragment_forecast);
         int[] days = {R.string.monday_short, R.string.tuesday_short, R.string.wednesday_short,
